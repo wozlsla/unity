@@ -78,6 +78,18 @@ public class PlayerController : MonoBehaviour
             winTextObject.SetActive(true);
         }
     }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+
+            winTextObject.gameObject.SetActive(true);
+            // update winTextObject
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+        }
+    }
 }
 
 /*
