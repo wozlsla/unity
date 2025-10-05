@@ -76,6 +76,12 @@ public class PlayerController : MonoBehaviour
         if (count >= 12)
         {
             winTextObject.SetActive(true);
+
+            GameObject enemyBody = GameObject.FindGameObjectWithTag("Enemy");
+            if (enemyBody != null)
+            {
+                Destroy(enemyBody.transform.parent.gameObject);
+            }
         }
     }
 

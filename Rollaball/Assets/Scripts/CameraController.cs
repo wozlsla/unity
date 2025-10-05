@@ -19,7 +19,10 @@ public class CameraController : MonoBehaviour
     // Update처럼 매 프레임 실행되지만, 다른 모든 Update 작업이 완료된 후에 실행
     void LateUpdate()
     {
-        // 카메라 위치 (플레이어 위치 + 오프셋)
-        transform.position = player.transform.position + offset;
+        if (player != null)
+        {
+            // 카메라 위치 (플레이어 위치 + 오프셋)
+            transform.position = player.transform.position + offset;
+        }
     }
 }
